@@ -1,0 +1,70 @@
+/* Zera os espaços padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* ESTILOS DO CABEÇALHO SUPERIOR */
+.cabecalho-superior {
+    background-color: #003366; /* Azul escuro institucional */
+    padding: 8px 20px;
+}
+
+.cabecalho-superior nav {
+    display: flex;
+    justify-content: flex-end; /* Alinha os links à direita na tela do computador */
+    gap: 20px; /* Espaço entre os links */
+}
+
+.cabecalho-superior a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cabecalho-superior a:hover {
+    text-decoration: underline;
+}
+
+.menu-principal {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.destaque {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.destaque button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* REGRAS PARA O CELULAR (Telas menores que 600px) */
+@media (max-width: 600px) {
+    .cabecalho-superior nav {
+        justify-content: center; /* Centraliza os links no celular */
+        flex-wrap: wrap; /* Permite que os links desçam de linha se faltar espaço na tela */
+        gap: 15px;
+    }
+    
+    .destaque h1 {
+        font-size: 22px; /* Diminui a fonte do título para caber na tela mobile */
+    }
+}
