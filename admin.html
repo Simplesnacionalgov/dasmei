@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNPJ360 | Administração</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="admin-body">
+<div id="login" class="login-page">
+  <div class="login-card">
+    <div class="brand"><span class="brand-mark">360</span><span>CNPJ<span>360</span></span></div>
+    <h1>Painel administrativo</h1>
+    <p>Entre para importar e gerenciar a base de demonstração.</p>
+    <input id="user" placeholder="Usuário" value="admin">
+    <input id="password" type="password" placeholder="Senha">
+    <button class="button full" onclick="login()">Entrar</button>
+    <div id="loginMsg" class="message"></div>
+    <small>Senha padrão da demonstração: admin123</small>
+  </div>
+</div>
+
+<div id="dashboard" class="hidden">
+  <header class="admin-top"><div class="brand"><span class="brand-mark">360</span><span>CNPJ<span>360</span></span></div><a href="/">Voltar ao site</a></header>
+  <main class="admin-main">
+    <div class="section-head"><div><div class="eyebrow">ADMINISTRAÇÃO</div><h1>Dashboard</h1></div></div>
+    <div id="stats" class="stats-grid"></div>
+
+    <section class="admin-card">
+      <div class="section-head compact"><div><div class="eyebrow">IMPORTAÇÃO</div><h2>Importar planilha Excel</h2></div></div>
+      <form id="uploadForm" class="upload-area">
+        <input type="file" name="arquivo" id="arquivo" accept=".xlsx,.xls,.csv" required>
+        <p>Selecione um arquivo <b>.xlsx</b> ou <b>.xls</b>.</p>
+        <button class="button">Importar dados</button>
+      </form>
+      <div id="uploadMsg" class="message"></div>
+      <div class="template"><b>Colunas aceitas:</b> CNPJ, Nome, CPF, Telefone, Email, Cidade, Status, Competência, Valor, Vencimento, Situação.</div>
+    </section>
+
+    <section class="admin-card">
+      <div class="section-head compact"><div><div class="eyebrow">BASE DE DADOS</div><h2>Empresas cadastradas</h2></div><button class="ghost" onclick="loadAll()">Atualizar</button></div>
+      <div class="table-wrap"><table><thead><tr><th>CNPJ</th><th>Empresa</th><th>Status</th><th>Pendências</th><th>Total</th></tr></thead><tbody id="table"></tbody></table></div>
+    </section>
+  </main>
+</div>
+<script src="/admin.js"></script>
+</body>
+</html>

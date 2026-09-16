@@ -1,0 +1,17 @@
+{
+  "name": "cnpj360",
+  "version": "1.0.0",
+  "description": "Sistema acadêmico de consulta e regularização empresarial com importação de Excel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "qrcode": "^1.5.4",
+    "xlsx": "^0.18.5"
+  }
+}

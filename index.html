@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <!-- Esta linha abaixo é a mais importante para deixar o site bom para acessar pelo celular no navegador -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regularização de MEI</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNPJ360 | Consulta Empresarial</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">360</span><span>CNPJ<span>360</span></span></div>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#como">Como funciona</a>
+    <a href="#seguranca">Segurança</a>
+    <a href="/admin.html">Administração</a>
+  </nav>
+</header>
 
-    <!-- CABEÇALHO SUPERIOR -->
-    <header>
-        <div class="cabecalho-superior">
-            <nav>
-                <a href="#institucional">Institucional</a>
-                <a href="#acessibilidade">Acessibilidade</a>
-                <a href="#participe">Participe</a>
-            </nav>
-        </div>
-        
-        <!-- ÁREA DO LOGO E MENU PRINCIPAL -->
-        <div class="menu-principal">
-            <div class="logo">Meu MEI Regularizado</div>
-        </div>
-    </header>
+<main>
+<section id="inicio" class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">PLATAFORMA ACADÊMICA • DEMONSTRAÇÃO</div>
+    <h1>Consulte informações empresariais de forma <span>simples e organizada.</span></h1>
+    <p>Informe um CNPJ cadastrado na base de demonstração para visualizar dados e eventuais pendências.</p>
+    <form id="consultaForm" class="search-box">
+      <input id="cnpj" maxlength="18" placeholder="00.000.000/0000-00" autocomplete="off">
+      <button>Consultar CNPJ</button>
+    </form>
+    <div id="msg" class="message"></div>
+    <div class="trust-row"><span>✓ Validação de CNPJ</span><span>✓ Dados organizados</span><span>✓ Ambiente de demonstração</span></div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-card-header">Consulta empresarial</div>
+    <div class="stat"><b>Dados cadastrais</b><span>✓</span></div>
+    <div class="stat"><b>Pendências</b><span>✓</span></div>
+    <div class="stat"><b>Regularização</b><span>✓</span></div>
+    <div class="hero-circle">360°</div>
+  </div>
+</section>
 
-    <!-- CORPO DO SITE / CONTEÚDO PRINCIPAL -->
-    <main>
-        <section class="destaque">
-            <h1>Regularize seu MEI de forma rápida</h1>
-            <p>Consulte seus débitos e mantenha sua empresa em dia.</p>
-            <button>Consultar CNPJ</button>
-        </section>
-        
-        <section class="servicos">
-            <!-- Aqui entrariam as caixas explicando os serviços (ex: Emissão de guias, etc) -->
-        </section>
-    </main>
+<section id="resultado" class="section hidden">
+  <div class="section-head">
+    <div><div class="eyebrow">RESULTADO DA CONSULTA</div><h2>Dados da empresa</h2></div>
+    <button class="ghost" onclick="window.scrollTo({top:0,behavior:'smooth'})">Nova consulta</button>
+  </div>
+  <div id="empresaCard" class="company-card"></div>
+  <div class="section-head compact"><div><div class="eyebrow">SITUAÇÃO</div><h2>Pendências e competências</h2></div></div>
+  <div id="pendencias"></div>
+</section>
 
-    <!-- RODAPÉ -->
-    <footer>
-        <p>&copy; 2026 - Portal de Regularização. Todos os direitos reservados.</p>
-    </footer>
+<section id="como" class="section">
+  <div class="eyebrow">COMO FUNCIONA</div>
+  <h2>Consulta em poucos passos</h2>
+  <div class="grid3">
+    <article><b>01</b><h3>Informe o CNPJ</h3><p>Digite o número do CNPJ para iniciar a consulta.</p></article>
+    <article><b>02</b><h3>Visualize os dados</h3><p>O sistema localiza o cadastro correspondente na base.</p></article>
+    <article><b>03</b><h3>Verifique pendências</h3><p>Selecione uma pendência para visualizar a tela de regularização.</p></article>
+  </div>
+</section>
 
+<section id="seguranca" class="section security">
+  <div><div class="eyebrow">PROJETO ACADÊMICO</div><h2>Arquitetura preparada para automação</h2><p>Os dados podem ser importados pelo painel administrativo através de uma planilha Excel e armazenados em banco de dados.</p></div>
+  <a class="button" href="/admin.html">Abrir painel administrativo</a>
+</section>
+</main>
+
+<footer>CNPJ360 • Projeto acadêmico • Dados de demonstração</footer>
+
+<div id="paymentModal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal()">×</button>
+    <div class="eyebrow">REGULARIZAÇÃO</div>
+    <h2>Pagamento via PIX</h2>
+    <div id="payment"></div>
+  </div>
+</div>
+
+<script src="/app.js"></script>
 </body>
 </html>
